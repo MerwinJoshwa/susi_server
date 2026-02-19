@@ -38,7 +38,7 @@ echo ">>> Pushing docker image"
 docker push fossasia/susi_server
 
 echo ">>> Updating deployment"
-kubectl set image deployment/susi-server \ --namespace=web \susi-server=fossasia/susi_server:$TRAVIS_COMMIT
+kubectl set image deployment/susi-server --namespace=web susi-server=fossasia/susi_server:$TRAVIS_COMMIT
 
 echo ">>> Waiting for Kubernetes rollout to complete"
 
